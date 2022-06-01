@@ -1,9 +1,9 @@
-const FlashCard = () => {
+const FlashCard = ({ id, text, date }) => {
   return (
     <div className='flashcard'>
-      <span> first flashcard </span>
+      <span> {text} </span>
       <div className='flashcard-footer'>
-        <small> date goes here </small>
+        <small> {date} </small>
       </div>
     </div>
   );
