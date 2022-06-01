@@ -51,18 +51,13 @@ function App() {
   }
 
   return (
-    <div>
-      <div>
-        <FlashCardsHeading heading="Flash Cards" />
-      </div>
-      <button> Add Flash Card </button>
-      <div className='flash-cards-container'>
-        <SearchBox handleSearch={setSearchText}/>
-        <FlashCardsList
-          flashCards={flashCards.filter((flashCard) => flashCard.text.toLowerCase().includes(searchText))}
-          handleAddFlashCard={addFlashCard}
-          handleDeleteFlashCard={deleteFlashCard}/>
-      </div>
+    <div className='flash-cards-container'>
+      <FlashCardsHeading />
+      <SearchBox handleSearch={setSearchText}/>
+      <FlashCardsList
+        flashCards={flashCards.filter((flashCard) => flashCard.text.toLowerCase().includes(searchText))}
+        handleAddFlashCard={addFlashCard}
+        handleDeleteFlashCard={deleteFlashCard}/>
     </div>
   );
 }

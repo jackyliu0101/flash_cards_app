@@ -1,9 +1,10 @@
 import React from 'react';
 
-const FlashCardsHeading = (props) => {
+const FlashCardsHeading = () => {
   return (
-    <div>
-      <h1> {props.heading} </h1>
+    <div className='heading'>
+      <h1> Flash Cards </h1>
+      <button> Add Flash Card </button>
     </div>
   );
 }

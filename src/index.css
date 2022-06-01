@@ -35,8 +35,16 @@
 .search input {
   border: none;
   background-color: rgb(233, 233, 233);
+  width: 100%;
+  padding: 5px;
 }
 
 .search input:focus {
   outline: none;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
