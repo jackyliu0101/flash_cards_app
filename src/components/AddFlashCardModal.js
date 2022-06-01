@@ -1,8 +1,23 @@
 import React from 'react';
+import { useState } from 'react';
 
 const AddFlashCardModal = (props) => {
+  const [flashCardText, setFlashCardText] = useState('');
+
   if (!props.show) {
     return null;
+  }
+
+  const handleChange = (event) => {
+    setFlashCardText(event.target.value);
+  }
+
+  const handleSaveClick = () => {
+    if (flashCardText.trim().length > 0) {
+      props.handleAddFlashCard(flashCardText);
+      setFlashCardText("");
+      props.onClose();
+    }
   }
 
   return (
@@ -13,13 +28,14 @@ const AddFlashCardModal = (props) => {
         </div>
         <div className='modal-body'>
           <textarea
-            rows="8"
-            cols="10"
-            placeholder="type to add a flashcard..." >
+            rows="10"
+            value={flashCardText}
+            placeholder="type to add a flashcard..."
+            onChange={handleChange} >
           </textarea>
         </div>
         <div className='modal-footer'>
-          <button> Save </button>
+          <button onClick={handleSaveClick}> Save </button>
           <button onClick={props.onClose}> Cancel </button>
         </div>
       </div>

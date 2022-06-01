@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className='flash-cards-container'>
-      <FlashCardsHeading />
+      <FlashCardsHeading handleAddFlashCard={addFlashCard}/>
       <SearchBox handleSearch={setSearchText}/>
       <FlashCardsList
         flashCards={flashCards.filter((flashCard) => flashCard.text.toLowerCase().includes(searchText))}
