@@ -8,4 +8,4 @@ const FlashCardsHeading = (props) => {
   );
 }
 
-export default FlashCardsHeading
+export default FlashCardsHeading;
