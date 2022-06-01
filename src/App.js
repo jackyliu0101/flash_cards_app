@@ -31,6 +31,8 @@ function App() {
     }
   ]);
 
+  const [searchText, setSearchText] = useState("");
+
   const addFlashCard = (text) => {
     const date = new Date();
     const newFlashCard = {
@@ -53,13 +55,11 @@ function App() {
       <div>
         <FlashCardsHeading heading="Flash Cards" />
       </div>
-      <div>
-        <SearchBox />
-      </div>
       <button> Add Flash Card </button>
       <div className='flash-cards-container'>
+        <SearchBox handleSearch={setSearchText}/>
         <FlashCardsList
-          flashCards={flashCards}
+          flashCards={flashCards.filter((flashCard) => flashCard.text.toLowerCase().includes(searchText))}
           handleAddFlashCard={addFlashCard}
           handleDeleteFlashCard={deleteFlashCard}/>
       </div>
