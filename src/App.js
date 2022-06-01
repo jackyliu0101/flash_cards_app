@@ -31,6 +31,23 @@ function App() {
     }
   ]);
 
+  const addFlashCard = (text) => {
+    const date = new Date();
+    const newFlashCard = {
+      text: text,
+      date: date.toLocaleDateString(),
+      id: nanoid()
+    };
+
+    const newFlashCards = [...flashCards, newFlashCard];
+    setFlashCards(newFlashCards);
+  }
+
+  const deleteFlashCard = (id) => {
+    const newFlashCards = flashCards.filter((note) => note.id !== id);
+    setFlashCards(newFlashCards);
+  }
+
   return (
     <div>
       <div>
@@ -41,7 +58,10 @@ function App() {
       </div>
       <button> Add Flash Card </button>
       <div className='flash-cards-container'>
-        <FlashCardsList flashCards={flashCards}/>
+        <FlashCardsList
+          flashCards={flashCards}
+          handleAddFlashCard={addFlashCard}
+          handleDeleteFlashCard={deleteFlashCard}/>
       </div>
     </div>
   );

@@ -1,10 +1,17 @@
 import FlashCard from './FlashCard';
+import AddFlashCard from './AddFlashCard'
 
-const FlashCardsList = ({ flashCards }) => {
+const FlashCardsList = ({ flashCards, handleAddFlashCard, handleDeleteFlashCard }) => {
   return (
-    <div class='flash-cards-list'>
-      {flashCards.map((flashCard) => <FlashCard id={flashCard.id} text={flashCard.text} date={flashCard.date}/>)}
-
+    <div className='flash-cards-list'>
+      {flashCards.map((flashCard) => (
+        <FlashCard
+          id={flashCard.id}
+          text={flashCard.text}
+          date={flashCard.date}
+          handleDeleteFlashCard={handleDeleteFlashCard}/>
+        ))}
+      <AddFlashCard handleAddFlashCard={handleAddFlashCard} />
     </div>
   );
 }
