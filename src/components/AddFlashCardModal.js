@@ -3,19 +3,31 @@ import { useState } from 'react';
 
 const AddFlashCardModal = (props) => {
   const [flashCardText, setFlashCardText] = useState('');
+  const [flashCardAnswer, setFlashCardAnswer] = useState('');
 
   if (!props.show) {
     return null;
   }
 
-  const handleChange = (event) => {
+  const handleCancel = () => {
+    setFlashCardText("");
+    setFlashCardAnswer("");
+    props.onClose();
+  }
+
+  const handleTextChange = (event) => {
     setFlashCardText(event.target.value);
   }
 
+  const handleAnswerChange = (event) => {
+    setFlashCardAnswer(event.target.value);
+  }
+
   const handleSaveClick = () => {
-    if (flashCardText.trim().length > 0) {
+    if ((flashCardText.trim().length > 0) && (flashCardAnswer.trim().length > 0)) {
       props.handleAddFlashCard(flashCardText);
       setFlashCardText("");
+      setFlashCardAnswer("");
       props.onClose();
     }
   }
@@ -27,16 +39,24 @@ const AddFlashCardModal = (props) => {
           <h4> Add Flash Card </h4>
         </div>
         <div className='modal-body'>
+          <span> Question </span>
           <textarea
             rows="10"
             value={flashCardText}
-            placeholder="type to add a flashcard..."
-            onChange={handleChange} >
+            placeholder="enter question here..."
+            onChange={handleTextChange} >
+          </textarea>
+          <span> Answer </span>
+          <textarea
+            rows="10"
+            value={flashCardAnswer}
+            placeholder="enter answer here..."
+            onChange={handleAnswerChange} >
           </textarea>
         </div>
         <div className='modal-footer'>
           <button onClick={handleSaveClick}> Save </button>
-          <button onClick={props.onClose}> Cancel </button>
+          <button onClick={handleCancel}> Cancel </button>
         </div>
       </div>
     </div>

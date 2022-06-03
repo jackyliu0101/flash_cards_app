@@ -12,31 +12,36 @@ function App() {
     {
       id: nanoid(),
       text: 'first flashcard',
+      answer: 'first answer',
       date: '01/01/2022'
     },
     {
       id: nanoid(),
       text: 'second flashcard',
+      answer: 'second answer',
       date: '02/02/2022'
     },
     {
       id: nanoid(),
       text: 'third flashcard',
+      answer: 'third answer',
       date: '03/03/2022'
     },
     {
       id: nanoid(),
       text: 'another flashcard',
+      answer: 'another answer',
       date: '04/03/2022'
     }
   ]);
 
   const [searchText, setSearchText] = useState("");
 
-  const addFlashCard = (text) => {
+  const addFlashCard = (text, answer) => {
     const date = new Date();
     const newFlashCard = {
       text: text,
+      answer: answer,
       date: date.toLocaleDateString(),
       id: nanoid()
     };
