@@ -8,7 +8,7 @@ const FlashCardsHeading = ({ handleAddFlashCard }) => {
   return (
     <div className='heading'>
       <h1> Flash Cards </h1>
-      <button onClick={() => setShowModal(true)}> Add Flash Card </button>
+      <button className='basic-button' onClick={() => setShowModal(true)}> Add Flash Card </button>
       <AddFlashCardModal show={showModal} handleAddFlashCard={handleAddFlashCard} onClose={() => setShowModal(false)} />
     </div>
   );

@@ -1,5 +1,4 @@
 import FlashCard from './FlashCard';
-import AddFlashCard from './AddFlashCard'
 
 const FlashCardsList = ({ flashCards, handleAddFlashCard, handleDeleteFlashCard }) => {
   return (
@@ -11,7 +10,6 @@ const FlashCardsList = ({ flashCards, handleAddFlashCard, handleDeleteFlashCard 
           date={flashCard.date}
           handleDeleteFlashCard={handleDeleteFlashCard}/>
         ))}
-      <AddFlashCard handleAddFlashCard={handleAddFlashCard} />
     </div>
   );
 }
