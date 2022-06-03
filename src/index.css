@@ -22,6 +22,12 @@
   white-space: pre-wrap;
 }
 
+.flashcard-header, .flashcard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .basic-button {
   background-color: #e1e1e1;
   border: none;
