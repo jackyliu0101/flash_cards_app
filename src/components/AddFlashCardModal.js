@@ -25,7 +25,7 @@ const AddFlashCardModal = (props) => {
 
   const handleSaveClick = () => {
     if ((flashCardText.trim().length > 0) && (flashCardAnswer.trim().length > 0)) {
-      props.handleAddFlashCard(flashCardText, flashCardAnswer);
+      props.handleAddFlashCard(flashCardText.trim(), flashCardAnswer.trim());
       setFlashCardText("");
       setFlashCardAnswer("");
       props.onClose();
