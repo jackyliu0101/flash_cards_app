@@ -39,14 +39,14 @@ const AddFlashCardModal = (props) => {
           <h4> Add Flash Card </h4>
         </div>
         <div className='modal-body'>
-          <span> Question </span>
+          <h5> Question </h5>
           <textarea
             rows="10"
             value={flashCardText}
             placeholder="enter question here..."
             onChange={handleTextChange} >
           </textarea>
-          <span> Answer </span>
+          <h5> Answer </h5>
           <textarea
             rows="10"
             value={flashCardAnswer}
