@@ -4,7 +4,7 @@ Flashcards app made with React.
 
 ### Some Screenshots:
 - Overview
-![Overview Screenshot](/img/FlashCardApp.png)
+![Overview Screenshot](/img/overview.png)
 - Add Flashcard Modal
 ![Add Flashcard Modal](/img/addFlashCardModal.png)
 
